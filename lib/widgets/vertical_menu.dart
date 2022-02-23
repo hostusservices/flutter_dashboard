@@ -19,7 +19,7 @@ class VerticalMenuItem extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       onHover: (value) {
-        value
+        value 
             ? menuController.onHover(itemName)
             : menuController.onHover("not hovering");
       },

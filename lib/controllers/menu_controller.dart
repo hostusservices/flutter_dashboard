@@ -15,12 +15,14 @@ class MenuController extends GetxController {
   }
 
   onHover(String itemName) {
-    if (!isActive(itemName)) hoverItem.value = itemName;
+    if (!isActive(itemName)) {
+      hoverItem.value = itemName;
+    } else {}
   }
 
-  isActive(String itemName) => activeItem.value = itemName;
+  isActive(String itemName) => activeItem.value == itemName;
 
-  isHovering(String itemName) => hoverItem.value = itemName;
+  isHovering(String itemName) => hoverItem.value == itemName;
 
   Widget returnIconFor(String itemName) {
     switch (itemName) {
@@ -38,16 +40,17 @@ class MenuController extends GetxController {
   }
 
   Widget _customIcon(IconData icon, String itemName) {
-    if (isActive(itemName))
+    if (isActive(itemName)) {
       return Icon(
         icon,
         size: 22,
         color: dark,
       );
-
-    return Icon(
-      icon,
-      color: isHovering(itemName) ? dark : lightGrey,
-    );
+    } else {
+      return Icon(
+        icon,
+        color: isHovering(itemName) ? dark : lightGrey,
+      );
+    }
   }
 }
