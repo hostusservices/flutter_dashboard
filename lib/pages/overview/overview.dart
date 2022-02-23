@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants/controllers.dart';
-import 'package:flutter_application_1/controllers/menu_controller.dart';
 import 'package:flutter_application_1/helpers/responsiveness.dart';
 import 'package:flutter_application_1/pages/overview/widgets/overview_cards_large.dart';
 import 'package:flutter_application_1/pages/overview/widgets/overview_cards_medium.dart';
 import 'package:flutter_application_1/pages/overview/widgets/overview_cards_small.dart';
 import 'package:flutter_application_1/widgets/custome_text.dart';
+import 'package:flutter_application_1/widgets/revenue_section_large.dart';
+import 'package:flutter_application_1/widgets/revenue_section_small.dart';
 import 'package:get/get.dart';
 
 class OverViewPage extends StatelessWidget {
@@ -39,6 +40,10 @@ class OverViewPage extends StatelessWidget {
                   OverviewCardsLargeScreen()
               else
                 OverViewCardSmallSCreen(),
+              if (!ResponsiveWidget.isSmallScreen(context))
+                RevenueSectionLarge()
+              else
+                RevenueSectionSmall()
             ],
           ),
         )
