@@ -4,9 +4,9 @@ import 'package:flutter_application_1/widgets/horizontal_menu_item.dart';
 import 'package:flutter_application_1/widgets/vertical_menu.dart';
 
 class SideMenuItem extends StatelessWidget {
-  final String itemName;
+   var itemName;
   final VoidCallback onTap;
-  const SideMenuItem({
+   SideMenuItem({
     Key? key,
     required this.itemName,
     required this.onTap,
