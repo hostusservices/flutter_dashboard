@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/authentication/authentication.dart';
 import 'package:flutter_application_1/pages/clients/clients.dart';
 import 'package:flutter_application_1/pages/drivers/drivers.dart';
+import 'package:flutter_application_1/pages/home.dart';
 import 'package:flutter_application_1/pages/overview/overview.dart';
 import 'dart:js';
 
@@ -11,13 +12,15 @@ import 'package:flutter_application_1/routing/routes.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
-    case OverViewPageRoute:
+    case homePageRoute:
+      return _getPageRoute(HomePage());
+    case overviewPageRoute:
       return _getPageRoute(OverViewPage());
-    case DriversPageRoute:
+    case driversPageRoute:
       return _getPageRoute(DriversPage());
-    case ClientsPageRoute:
+    case clientsPageRoute:
       return _getPageRoute(ClientsPage());
-    case AuthenticationPageRoute:
+    case authenticationPageRoute:
       return _getPageRoute(AuthenticationPage());
     default:
       return _getPageRoute(OverViewPage());
